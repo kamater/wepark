@@ -1,25 +1,25 @@
 <div class="container">
   <div class="row py-4 d-flex">
-    <div class="col-md-3"><%= cl_image_tag @cotisation.service.photo, width: '500', height: '100%' %></div>
+    <div class="col-md-3"><%= cl_image_tag @rental.garage.photo, width: '500', height: '100%' %></div>
     <div class="col" style=" margin-left: 269px;">
       <h1>Détails de votre réservation</h1>
       <p>
-        <i class="fas fa-cube"></i> <%= @cotisation.service.name %> m2
+        <i class="fas fa-cube"></i> <%= @rental.garage.description %> m2
       </p>
       <p>
-        <i class="fas fa-user-check"></i> <%= @cotisation.user.first_name %> <%= @order.rental.garage.user.last_name %>
+        <i class="fas fa-user-check"></i> <%= @rental.garage.user.first_name %> <%= @order.rental.garage.user.last_name %>
       </p>
       <p>
-        <i class="fas fa-phone"></i> <%= @cotisation.user.phone_number %>
+        <i class="fas fa-phone"></i> <%= @rental.garage.user.phone_number %>
       </p>
       <p>
         <i class="fas fa-compass"></i> <%= @order.rental.garage.location %>, <%= @order.rental.garage.city %>
       </p>
       <p>
-        <i class="fas fa-calendar-alt"></i> <strong>A partir du</strong> <%= @cotisation.start_date %> >
+        <i class="fas fa-calendar-alt"></i> <strong>A partir du</strong> <%= @rental.start_date %> >
       </p>
       <p>
-        <i class="fas fa-euro-sign"></i> Montant total : <strong><%= @cotisation.order.price_cents %>€</strong>
+        <i class="fas fa-euro-sign"></i> Montant total : <strong><%= @order.rental.garage.price_cents %>€</strong>
       </p>
       <button id="pay" class="btn btn-primary">Payer</button> <%= link_to 'Annuler', dashboard_path, class: 'btn btn-danger' %>
       <script src="https://js.stripe.com/v3/" data-amount="2000"></script>
